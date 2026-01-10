@@ -1,56 +1,66 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rajneesh Singh | Professional Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg-1: #04050a;        /* very dark base */
-      --bg-2: #071029;        /* deep navy */
-      --bg-3: #073527;        /* deep emerald */
-      --text: #f4efe6;        /* warm off-white */
-      --muted: #cfc6b8;       /* subtle warm gray */
-      --accent: #D4AF37;      /* luxury gold */
-      --accent-dark: #B68E2E; /* darker gold */
-      --glass: rgba(255,255,255,0.04);
-      --card-bg: rgba(255,255,255,0.03);
-    }
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rajneesh Singh | CEO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#business">Business</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+  <header class="hero">
+    <img class="avatar" src="assets/rajneesh.jpg" alt="Rajneesh Singh">
+    <h1>Rajneesh Singh</h1>
+    <p class="lead">CEO | MBA Graduate | Passionate about leadership, innovation, and table tennis 🏓</p>
+  </header>
 
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background: rgba(6,8,12,0.55);
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      padding: 14px 20px;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(212,175,55,0.06);
-    }
-    nav a {
-      color: var(--text);
-      margin: 0 18px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.25s ease, transform 0.25s ease;
-      letter-spacing: 0.2px;
-    }
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m Rajneesh Singh from Ghaziabad. With a Masters in Business Administration, I thrive on building strategies, empowering teams, and creating impactful solutions. Outside of work, I enjoy playing table tennis and staying active.</p>
+  </section>
 
-    .btn {
- background: linear-gradient(135deg,}
- 
- RGB...195...سیون}
+  <section id="skills">
+    <h2>Skills & Expertise</h2>
+    <ul>
+      <li>Business Strategy</li>
+      <li>Leadership</li>
+      <li>Team Management</li>
+      <li>Innovation</li>
+    </ul>
+  </section>
+
+  <section id="business">
+    <h2>My Business: Aurr</h2>
+    <p>Aurr is a lifestyle and fashion brand that blends modern design with cultural roots. Founded with a vision to create unique, expressive pieces, Aurr focuses on quality, creativity, and individuality. Discover more on our official Instagram.</p>
+    <div class="contact-actions">
+      <a class="btn" href="https://www.instagram.com/aurr.2020/" target="_blank">🌐 Visit Aurr</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Email: rajneesh@aurr.co.in | Phone: 9711887501 | Location: Ghaziabad</p>
+    <div class="contact-actions">
+      <a class="btn" href="tel:9711887501">📞 Call</a>
+      <a class="btn" href="mailto:rajneesh@aurr.co.in">✉️ Email</a>
+      <a class="btn" href="https://wa.me/919711887501">💬 WhatsApp</a>
+      <a class="btn" target="_blank" href="https://drive.google.com/open?id=1wQ9fz6h37XUIfe8E8-i2C5Mq52pnyPVW">📁 Portfolio</a>
+    </div>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const reveal = () => sections.forEach(s=>{
+      const r = s.getBoundingClientRect();
+      if(r.top < innerHeight - 120) s.classList.add('visible');
+    });
+    addEventListener('scroll', reveal);
+    addEventListener('load', reveal);
+  </script>
+</body>
+</html>
