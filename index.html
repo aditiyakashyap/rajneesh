@@ -134,9 +134,10 @@
     }
     .skill {
       background: var(--card-bg);
-      padding: 22px;
+      padding: 18px; /* Adjusted padding for better alignment */
       border-radius: 12px;
-      flex: 1 1 200px;
+      flex: 1 1 280px; /* Slightly wider minimum size */
+      max-width: 280px; /* Restrict the card size for uniformity */
       text-align: center;
       transition: transform 0.35s, box-shadow 0.35s;
       border: 1px solid rgba(212,175,55,0.06);
@@ -199,6 +200,13 @@
       .hero h1 { font-size: 2.1rem; }
       .hero p { padding: 0 10px; }
       nav a { margin: 0 10px; font-size: 0.95rem; }
+      .skill {
+        flex: 1 1 calc(100% - 40px); /* Adjust for full-width cards with margin */
+      }
+      .skills, .skill {
+        max-width: 95%;
+        margin: 0 auto; /* Center align for mobile */
+      }
     }
   </style>
 </head>
@@ -221,7 +229,7 @@
   <!-- About -->
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Hello, I’m Rajneesh Singh from Ghaziabad. With a Masters in Business Administration and experience as a CEO, I thrive on building strategies, empowering teams, and creating impactful solution[...]</p>
+    <p>Hello, I’m Rajneesh Singh from Ghaziabad. With a Masters in Business Administration and experience as a CEO, I thrive on building strategies, empowering teams, and creating impactful solutions...</p>
   </section>
 
   <!-- Skills -->
@@ -239,7 +247,7 @@
   <!-- Business -->
   <section id="business" class="business">
     <h2>My Business: Aurr</h2>
-    <p>Aurr is a lifestyle and fashion brand that blends modern design with cultural roots. Founded with a vision to create unique, expressive pieces, Aurr focuses on quality, creativity, and individu[...]</p>
+    <p>Aurr is a lifestyle and fashion brand that blends modern design with cultural roots. Founded with a vision to create unique, expressive pieces, Aurr focuses on quality, creativity, and individuality...</p>
     <div class="contact-buttons">
       <a href="https://www.instagram.com/aurr.2020/" target="_blank" class="btn">🌐 Visit Aurr</a>
     </div>
