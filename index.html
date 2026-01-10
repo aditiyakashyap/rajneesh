@@ -9,8 +9,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0a0a0a; /* deep black base */
-      color: #f5f5f5;
+      background: #0f0f1a;
+      color: #fff;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -20,22 +20,21 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%;
-      background: rgba(10,10,10,0.85);
+      background: rgba(0,0,0,0.7);
       backdrop-filter: blur(8px);
       display: flex;
       justify-content: center;
       padding: 15px;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,215,0,0.3);
     }
     nav a {
-      color: #f5f5f5;
+      color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
-    nav a:hover { color: #ffd700; } /* gold accent */
+    nav a:hover { color: #ff6f61; }
 
     /* Hero Section */
     .hero {
@@ -45,28 +44,25 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2c2c2c);
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
       background-size: 400% 400%;
-      animation: gradientMove 20s ease infinite;
+      animation: gradientMove 15s ease infinite;
     }
     .hero img {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       margin-bottom: 20px;
-      border: 3px solid #ffd700;
-      box-shadow: 0 0 40px rgba(255,215,0,0.6);
+      box-shadow: 0 0 30px rgba(255,255,255,0.6);
       animation: pulse 3s infinite;
     }
     .hero h1 {
-      font-size: 2.7rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
-      color: #ffd700;
     }
     .hero p {
       font-size: 1.2rem;
       max-width: 600px;
-      color: #dcdcdc;
     }
 
     /* Sections */
@@ -86,7 +82,6 @@
       text-align: center;
       margin-bottom: 40px;
       font-size: 2rem;
-      color: #ffd700;
       position: relative;
     }
     section h2::after {
@@ -94,13 +89,12 @@
       display: block;
       width: 60px;
       height: 3px;
-      background: #ffd700;
+      background: #ff6f61;
       margin: 10px auto 0;
     }
 
     .about, .contact, .business {
       text-align: center;
-      color: #e0e0e0;
     }
 
     .skills {
@@ -110,18 +104,14 @@
       gap: 20px;
     }
     .skill {
-      background: rgba(255,215,0,0.08);
+      background: rgba(255,255,255,0.1);
       padding: 20px;
       border-radius: 12px;
       flex: 1 1 200px;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid rgba(255,215,0,0.3);
+      transition: transform 0.3s;
     }
-    .skill:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(255,215,0,0.4);
-    }
+    .skill:hover { transform: translateY(-10px); }
 
     /* Contact Buttons */
     .contact-buttons {
@@ -132,18 +122,17 @@
       flex-wrap: wrap;
     }
     .btn {
-      background: linear-gradient(135deg, #ffd700, #c5a300);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #ff6f61, #ff3b2e);
+      color: #fff;
       padding: 12px 20px;
       border-radius: 30px;
       text-decoration: none;
       font-size: 0.9rem;
-      font-weight: 600;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(255,215,0,0.6);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
     }
 
     /* Animations */
@@ -153,9 +142,9 @@
       100% { background-position: 0% 50%; }
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 20px rgba(255,215,0,0.4); }
-      50% { box-shadow: 0 0 40px rgba(255,215,0,0.8); }
-      100% { box-shadow: 0 0 20px rgba(255,215,0,0.4); }
+      0% { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+      50% { box-shadow: 0 0 35px rgba(255,255,255,0.9); }
+      100% { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
     }
 
     /* Responsive */
@@ -230,4 +219,7 @@
       });
     };
     window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("
+    window.addEventListener("load", revealOnScroll);
+  </script>
+</body>
+</html>
