@@ -1,471 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rajneesh Singh | CEO & Business Leader</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajneesh Singh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #0a66c2;
-      --primary-dark: #084a8c;
-      --dark: #111827;
-      --gray: #6b7280;
-      --light: #f9fafb;
-      --success: #059669;
-      --shadow: 0 10px 30px rgba(0,0,0,0.1);
-      --bg: #f3f4f6;
-      --card-bg: white;
-      --text: #111827;
-      --text-muted: #6b7280;
-      --particle-color: rgba(10,102,194,0.15); /* Subtle blue-ish particles */
-    }
-
-    [data-theme="dark"] {
-      --bg: #111827;
-      --card-bg: #1f2937;
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-      --shadow: 0 10px 30px rgba(0,0,0,0.4);
-      --primary: #60a5fa;
-      --primary-dark: #3b82f6;
-      --particle-color: rgba(96,165,250,0.15); /* Lighter in dark mode */
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-      transition: background 0.4s ease, color 0.4s ease;
-      position: relative;
-      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f1a;
+      color: #fff;
+      overflow-x: hidden;
     }
 
+    /* Animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #1f1c2c, #928dab, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      z-index: -2;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Particle canvas */
     #particles {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: -1;
-      pointer-events: none;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .theme-toggle {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      transform: scale(1.2);
-      color: var(--primary);
     }
 
     .card {
-      background: var(--card-bg);
+      background: rgba(255,255,255,0.08);
       border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease, background 0.4s ease;
-    }
-
-    .card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero {
-      position: relative;
-      height: 320px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
-
-    .profile-pic {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      border: 8px solid var(--card-bg);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-      object-fit: cover;
-      transform: translateY(50%);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .profile-pic:hover {
-      transform: translateY(48%) scale(1.05);
-    }
-
-    .content {
-      padding: 140px 2rem 3rem;
+      padding: 30px;
+      max-width: 420px;
+      margin: 80px auto;
       text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.6);
+      animation: pulse 3s infinite;
     }
 
     h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin-bottom: 0.5rem;
-      position: relative;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 6px 0;
+      font-size: 1rem;
+      opacity: 0.9;
     }
 
-    h1::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--card-bg);
-      animation: typing-bg 2.5s steps(20, end) forwards;
-      border-left: 2px solid var(--primary);
-    }
-
-    @keyframes typing-bg {
-      from { width: 100%; }
-      to { width: 0; }
-    }
-
-    .tagline {
-      font-size: 1.25rem;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-      font-weight: 500;
-      position: relative;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .tagline::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--card-bg);
-      animation: typing-bg 3.5s steps(40, end) forwards 2.5s; /* Delay until name finishes */
-      border-left: 2px solid var(--primary);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin: 2.5rem 0;
-      text-align: left;
-    }
-
-    .info-item {
-      background: rgba(10,102,194,0.08);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border-left: 5px solid var(--primary);
-      transition: all 0.3s ease;
-    }
-
-    .info-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(10,102,194,0.2);
-    }
-
-    .info-item i {
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-right: 0.8rem;
-    }
-
-    .info-item h3 {
-      color: var(--primary);
-      margin-bottom: 0.6rem;
-      font-size: 1.25rem;
-    }
-
-    .contact-buttons {
+    .buttons {
+      margin-top: 25px;
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin: 3rem 0;
+      gap: 12px;
     }
-
     .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      padding: 1rem 2rem;
-      border-radius: 50px;
+      background: linear-gradient(135deg, #ff6f61, #ff3b2e);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      flex: 1;
-      max-width: 220px;
-      min-width: 160px;
-      background: var(--primary);
-      color: white;
+      font-size: 0.9rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: inline-block;
     }
-
-    .btn-dark    { background: var(--dark); }
-    .btn-success { background: var(--success); }
-
     .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
     }
 
-    .footer {
-      margin-top: 3rem;
-      padding: 1.5rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Mobile optimizations */
-    @media (max-width: 768px) {
-      .hero { height: 280px; }
-      .profile-pic { width: 180px; height: 180px; }
-      .content { padding: 110px 1.2rem 2.5rem; }
-      h1 { font-size: 2.4rem; }
-      .tagline { font-size: 1.1rem; }
-      .btn { max-width: none; padding: 1.1rem 1.5rem; font-size: 1rem; }
-      .contact-buttons { flex-direction: column; align-items: stretch; }
-      .theme-toggle { top: 1rem; right: 1rem; font-size: 1.4rem; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+      50% { box-shadow: 0 0 35px rgba(255,255,255,0.9); }
+      100% { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
     }
 
     @media (max-width: 480px) {
-      .container { padding: 1rem; }
-      h1 { font-size: 2.2rem; }
-      .profile-pic { width: 160px; height: 160px; }
+      .card { padding: 20px; margin: 40px auto; }
+      h1 { font-size: 1.6rem; }
+      .btn { padding: 10px 16px; font-size: 0.85rem; }
     }
   </style>
 </head>
 <body>
+  <canvas id="particles"></canvas>
 
-<canvas id="particles"></canvas>
-
-<div class="container">
-  <i class="fas fa-moon theme-toggle" id="themeToggle"></i>
-
-  <div class="card">
-    <div class="hero">
-      <img 
-        class="profile-pic" 
-        src="/rajneesh.jpeg"
-        alt="Rajneesh Singh"
-      />
-    </div>
-
-    <div class="content">
-      <h1 id="name"></h1>
-      <div class="tagline" id="tagline"></div>
-
-      <div class="info-grid">
-        <div class="info-item">
-          <h3><i class="fas fa-map-marker-alt"></i> Lives in</h3>
-          <p>Ghaziabad, Uttar Pradesh, India</p>
-        </div>
-
-        <div class="info-item">
-          <h3><i class="fas fa-briefcase"></i> Qualifications</h3>
-          <p>CEO<br>Masters in Business Administration (MBA)</p>
-        </div>
-
-        <div class="info-item">
-          <h3><i class="fas fa-heart"></i> Likes to</h3>
-          <p>Play Table Tennis</p>
-        </div>
-      </div>
-
-      <div class="contact-buttons">
-        <a href="mailto:rajneesh@aurr.co.in" class="btn">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-        <a href="tel:+919711887501" class="btn btn-dark">
-          <i class="fas fa-phone"></i> Phone
-        </a>
-        <a href="https://wa.me/919711887501?text=Hi%20Rajneesh%2C%20I'd%20like%20to%20connect" 
-           target="_blank" class="btn btn-success">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-      </div>
+  <div class="card" id="profileCard">
+    <img src="assets/rajneesh.jpg" alt="Rajneesh Singh">
+    <h1>Rajneesh Singh</h1>
+    <p><strong>Email:</strong> rajneesh@aurr.co.in</p>
+    <p><strong>Phone:</strong> 9711887501</p>
+    <p><strong>Location:</strong> Ghaziabad</p>
+    <p><strong>Qualification:</strong> CEO, Masters in Business Administration</p>
+    <p><strong>Likes:</strong> Playing Table Tennis 🏓</p>
+    <div class="buttons">
+      <a href="tel:9711887501" class="btn">📞 Call</a>
+      <a href="mailto:rajneesh@aurr.co.in" class="btn">✉️ Email</a>
+      <a href="https://wa.me/919711887501" class="btn">💬 WhatsApp</a>
     </div>
   </div>
 
-  <div class="footer">
-    © 2026 Rajneesh Singh • Connecting Business & Passion
-  </div>
-</div>
-
-<script>
-  // Particle background
-  const canvas = document.getElementById('particles');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  const numParticles = 100; // Adjust for performance
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 3 + 1;
-      this.speedX = Math.random() * 1 - 0.5;
-      this.speedY = Math.random() * 1 - 0.5;
-    }
-
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-
-      if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-      if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-    }
-
-    draw() {
-      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--particle-color');
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function initParticles() {
-    particles = [];
-    for (let i = 0; i < numParticles; i++) {
-      particles.push(new Particle());
-    }
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.update();
-      p.draw();
+  <script>
+    // Reveal animation on scroll
+    const card = document.getElementById('profileCard');
+    window.addEventListener('scroll', () => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        card.classList.add('visible');
+      }
     });
-    requestAnimationFrame(animateParticles);
-  }
 
-  window.addEventListener('resize', () => {
-    resizeCanvas();
+    // Particle background
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 60; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2 + 1,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5
+        });
+      }
+    }
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255,255,255,0.7)';
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(drawParticles);
+    }
     initParticles();
-  });
-
-  resizeCanvas();
-  initParticles();
-  animateParticles();
-
-  // Typing animation for name and tagline
-  const nameText = 'Rajneesh Singh';
-  const taglineText = 'CEO | MBA | Table Tennis Enthusiast';
-  const nameEl = document.getElementById('name');
-  const taglineEl = document.getElementById('tagline');
-  let nameIndex = 0;
-  let taglineIndex = 0;
-
-  function typeName() {
-    if (nameIndex < nameText.length) {
-      nameEl.textContent += nameText.charAt(nameIndex);
-      nameIndex++;
-      setTimeout(typeName, 120); // Speed for name
-    } else {
-      nameEl.style.borderRight = 'none';
-      setTimeout(typeTagline, 300); // Short pause before tagline
-    }
-  }
-
-  function typeTagline() {
-    if (taglineIndex < taglineText.length) {
-      taglineEl.textContent += taglineText.charAt(taglineIndex);
-      taglineIndex++;
-      setTimeout(typeTagline, 80); // Speed for tagline
-    } else {
-      taglineEl.style.borderRight = 'none';
-    }
-  }
-
-  // Start typing when card is visible
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        setTimeout(typeName, 500); // Delay start
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.card').forEach(el => observer.observe(el));
-
-  // Theme toggle
-  const toggle = document.getElementById('themeToggle');
-  const html = document.documentElement;
-
-  function setTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      html.setAttribute('data-theme', savedTheme);
-      toggle.className = savedTheme === 'dark' ? 'fas fa-sun theme-toggle' : 'fas fa-moon theme-toggle';
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        html.setAttribute('data-theme', 'dark');
-        toggle.className = 'fas fa-sun theme-toggle';
-      }
-    }
-  }
-
-  toggle.addEventListener('click', () => {
-    if (html.getAttribute('data-theme') === 'dark') {
-      html.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-      toggle.className = 'fas fa-moon theme-toggle';
-    } else {
-      html.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-      toggle.className = 'fas fa-sun theme-toggle';
-    }
-  });
-
-  setTheme();
-</script>
+    drawParticles();
+  </script>
 </body>
 </html>
+
