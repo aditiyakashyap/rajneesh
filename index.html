@@ -6,13 +6,27 @@
   <title>Rajneesh Singh | Professional Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    :root{
+      --bg-1: #04050a;        /* very dark base */
+      --bg-2: #071029;        /* deep navy */
+      --bg-3: #073527;        /* deep emerald */
+      --text: #f4efe6;        /* warm off-white */
+      --muted: #cfc6b8;       /* subtle warm gray */
+      --accent: #D4AF37;      /* luxury gold */
+      --accent-dark: #B68E2E; /* darker gold */
+      --glass: rgba(255,255,255,0.04);
+      --card-bg: rgba(255,255,255,0.03);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
-      color: #fff;
+      background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
     /* Navbar */
@@ -20,21 +34,26 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(6,8,12,0.55);
       backdrop-filter: blur(8px);
       display: flex;
       justify-content: center;
-      padding: 15px;
+      padding: 14px 20px;
       z-index: 1000;
+      border-bottom: 1px solid rgba(212,175,55,0.06);
     }
     nav a {
-      color: #fff;
-      margin: 0 15px;
+      color: var(--text);
+      margin: 0 18px;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      font-weight: 600;
+      transition: color 0.25s ease, transform 0.25s ease;
+      letter-spacing: 0.2px;
     }
-    nav a:hover { color: #ff6f61; }
+    nav a:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
 
     /* Hero Section */
     .hero {
@@ -44,25 +63,31 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      background: linear-gradient(135deg, var(--bg-2), var(--bg-3));
       background-size: 400% 400%;
-      animation: gradientMove 15s ease infinite;
+      animation: gradientMove 18s ease infinite;
+      padding: 40px 20px;
     }
     .hero img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       margin-bottom: 20px;
-      box-shadow: 0 0 30px rgba(255,255,255,0.6);
-      animation: pulse 3s infinite;
+      box-shadow: 0 8px 40px rgba(212,175,55,0.14), inset 0 1px 0 rgba(255,255,255,0.02);
+      animation: pulse 3.5s infinite;
+      object-fit: cover;
+      border: 3px solid rgba(212,175,55,0.08);
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       margin-bottom: 10px;
+      color: var(--text);
+      letter-spacing: 0.6px;
     }
     .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
+      font-size: 1.05rem;
+      max-width: 680px;
+      color: var(--muted);
     }
 
     /* Sections */
@@ -83,18 +108,22 @@
       margin-bottom: 40px;
       font-size: 2rem;
       position: relative;
+      color: var(--text);
     }
     section h2::after {
       content: "";
       display: block;
       width: 60px;
       height: 3px;
-      background: #ff6f61;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
       margin: 10px auto 0;
+      border-radius: 2px;
+      box-shadow: 0 4px 18px rgba(182,142,46,0.12);
     }
 
     .about, .contact, .business {
       text-align: center;
+      color: var(--muted);
     }
 
     .skills {
@@ -104,14 +133,20 @@
       gap: 20px;
     }
     .skill {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
+      background: var(--card-bg);
+      padding: 22px;
       border-radius: 12px;
       flex: 1 1 200px;
       text-align: center;
-      transition: transform 0.3s;
+      transition: transform 0.35s, box-shadow 0.35s;
+      border: 1px solid rgba(212,175,55,0.06);
+      color: var(--text);
+      backdrop-filter: blur(4px);
     }
-    .skill:hover { transform: translateY(-10px); }
+    .skill:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 18px 40px rgba(7,18,20,0.6), 0 6px 24px rgba(212,175,55,0.06);
+    }
 
     /* Contact Buttons */
     .contact-buttons {
@@ -122,18 +157,29 @@
       flex-wrap: wrap;
     }
     .btn {
-      background: linear-gradient(135deg, #ff6f61, #ff3b2e);
-      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #0b0b08;
       padding: 12px 20px;
       border-radius: 30px;
       text-decoration: none;
-      font-size: 0.9rem;
-      transition: transform 0.3s, box-shadow 0.3s;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
+      box-shadow: 0 8px 20px rgba(182,142,46,0.12);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
     .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 45px rgba(182,142,46,0.16);
+      opacity: 0.98;
     }
+
+    a.btn:active { transform: translateY(-2px); }
+
+    /* Small decorative touches */
+    p small { color: var(--muted); }
 
     /* Animations */
     @keyframes gradientMove {
@@ -142,14 +188,17 @@
       100% { background-position: 0% 50%; }
     }
     @keyframes pulse {
-      0% { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
-      50% { box-shadow: 0 0 35px rgba(255,255,255,0.9); }
-      100% { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+      0% { box-shadow: 0 8px 20px rgba(212,175,55,0.10); }
+      50% { box-shadow: 0 16px 50px rgba(212,175,55,0.18); }
+      100% { box-shadow: 0 8px 20px rgba(212,175,55,0.10); }
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .skills { flex-direction: column; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero p { padding: 0 10px; }
+      nav a { margin: 0 10px; font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -172,7 +221,7 @@
   <!-- About -->
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Hello, I’m Rajneesh Singh from Ghaziabad. With a Masters in Business Administration and experience as a CEO, I thrive on building strategies, empowering teams, and creating impactful solutions. Outside of work, I enjoy playing table tennis and staying active.</p>
+    <p>Hello, I’m Rajneesh Singh from Ghaziabad. With a Masters in Business Administration and experience as a CEO, I thrive on building strategies, empowering teams, and creating impactful solution[...]</p>
   </section>
 
   <!-- Skills -->
@@ -190,7 +239,7 @@
   <!-- Business -->
   <section id="business" class="business">
     <h2>My Business: Aurr</h2>
-    <p>Aurr is a lifestyle and fashion brand that blends modern design with cultural roots. Founded with a vision to create unique, expressive pieces, Aurr focuses on quality, creativity, and individuality. Discover more on our official Instagram.</p>
+    <p>Aurr is a lifestyle and fashion brand that blends modern design with cultural roots. Founded with a vision to create unique, expressive pieces, Aurr focuses on quality, creativity, and individu[...]</p>
     <div class="contact-buttons">
       <a href="https://www.instagram.com/aurr.2020/" target="_blank" class="btn">🌐 Visit Aurr</a>
     </div>
