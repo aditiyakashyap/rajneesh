@@ -1,66 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rajneesh Singh | CEO</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#business">Business</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <header class="hero">
-    <img class="avatar" src="assets/rajneesh.jpg" alt="Rajneesh Singh">
-    <h1>Rajneesh Singh</h1>
-    <p class="lead">CEO | MBA Graduate | Passionate about leadership, innovation, and table tennis 🏓</p>
+    <h1 class="name">Rajneesh Singh</h1>
+    <p class="title">Chief Executive Officer</p>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m Rajneesh Singh from Ghaziabad. With a Masters in Business Administration, I thrive on building strategies, empowering teams, and creating impactful solutions. Outside of work, I enjoy playing table tennis and staying active.</p>
-  </section>
+  <main>
+    <section class="about">
+      <h2>About</h2>
+      <p>Rajneesh Singh is a visionary leader with a legacy of excellence, guiding organizations with timeless values and refined strategy.</p>
+    </section>
 
-  <section id="skills">
-    <h2>Skills & Expertise</h2>
-    <ul>
-      <li>Business Strategy</li>
-      <li>Leadership</li>
-      <li>Team Management</li>
-      <li>Innovation</li>
-    </ul>
-  </section>
+    <section class="leadership">
+      <h2>Leadership</h2>
+      <p>With decades of experience, Rajneesh embodies heritage, gravitas, and discretion — qualities that define enduring leadership.</p>
+    </section>
 
-  <section id="business">
-    <h2>My Business: Aurr</h2>
-    <p>Aurr is a lifestyle and fashion brand that blends modern design with cultural roots. Founded with a vision to create unique, expressive pieces, Aurr focuses on quality, creativity, and individuality. Discover more on our official Instagram.</p>
-    <div class="contact-actions">
-      <a class="btn" href="https://www.instagram.com/aurr.2020/" target="_blank">🌐 Visit Aurr</a>
-    </div>
-  </section>
+    <section class="vision">
+      <h2>Vision</h2>
+      <p>Committed to building institutions that last, with elegance, balance, and a focus on permanence over trends.</p>
+    </section>
+  </main>
 
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <p>Email: rajneesh@aurr.co.in | Phone: 9711887501 | Location: Ghaziabad</p>
-    <div class="contact-actions">
-      <a class="btn" href="tel:9711887501">📞 Call</a>
-      <a class="btn" href="mailto:rajneesh@aurr.co.in">✉️ Email</a>
-      <a class="btn" href="https://wa.me/919711887501">💬 WhatsApp</a>
-      <a class="btn" target="_blank" href="https://drive.google.com/open?id=1wQ9fz6h37XUIfe8E8-i2C5Mq52pnyPVW">📁 Portfolio</a>
-    </div>
-  </section>
-
-  <script>
-    const sections = document.querySelectorAll('section');
-    const reveal = () => sections.forEach(s=>{
-      const r = s.getBoundingClientRect();
-      if(r.top < innerHeight - 120) s.classList.add('visible');
-    });
-    addEventListener('scroll', reveal);
-    addEventListener('load', reveal);
-  </script>
+  <footer>
+    <p>&copy; Rajneesh Singh</p>
+  </footer>
 </body>
 </html>
