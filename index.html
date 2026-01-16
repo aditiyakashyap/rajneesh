@@ -6,63 +6,68 @@
 <title>Rajneesh Singh — Profile</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#071026;--card:#0f1724;--text:#e6eef8;--muted:#9aa7bd;--accent:#ffd166}
+  :root{--bg:#071026;--card:#0f1724;--text:#e6eef8;--muted:#9aa7bd;--accent:#ffd166;--radius:14px}
   *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#071026 0%,var(--bg) 100%);color:var(--text);padding:16px}
-  .card{max-width:760px;margin:0 auto;border-radius:14px;background:linear-gradient(180deg,rgba(255,209,102,0.02),transparent),var(--card);border:1px solid rgba(255,255,255,0.04);box-shadow:0 20px 60px rgba(0,0,0,0.6);overflow:hidden}
+  body{margin:0;padding:16px;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#071026 0%,var(--bg) 100%);color:var(--text)}
+  .wrap{max-width:920px;margin:0 auto}
+  .card{background:linear-gradient(180deg,rgba(255,209,102,0.02),transparent),var(--card);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04);box-shadow:0 20px 60px rgba(0,0,0,0.6);overflow:hidden}
   .head{display:flex;gap:12px;align-items:center;padding:14px}
-  .avatar{width:84px;height:84px;border-radius:12px;overflow:hidden;background:#071026;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center}
-  .avatar img{width:100%;height:100%;object-fit:cover}
+  .photo-wrap{width:clamp(72px,18vw,140px);height:clamp(72px,18vw,140px);border-radius:12px;overflow:hidden;background:#071026;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center}
+  .photo{width:100%;height:100%;object-fit:cover}
   .meta{flex:1}
-  .name{font-size:18px;font-weight:600}
-  .role{font-size:13px;color:var(--muted);margin-top:6px}
-  .body{padding:12px;display:grid;gap:12px}
+  .name{font-size:clamp(18px,4vw,22px);margin:0;font-weight:600}
+  .role{margin-top:6px;color:var(--muted);font-size:13px}
+  .body{display:grid;gap:12px;padding:12px}
+  @media(min-width:880px){.body{grid-template-columns:1fr 320px;padding:18px}}
   .panel{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
-  .panel h3{margin:0 0 8px 0;font-size:14px}
-  .muted{color:var(--muted);font-size:13px;line-height:1.5}
-  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-  .action-btn{padding:12px 14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,209,102,0.12),rgba(255,209,102,0.06));color:var(--text);text-decoration:none;border:1px solid rgba(255,209,102,0.18);font-weight:600;min-width:120px;text-align:center}
-  .action-btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04)}
-  @media(min-width:720px){.head{padding:18px}.avatar{width:120px;height:120px}.body{grid-template-columns:1fr 320px;padding:18px}}
+  .h{margin:0 0 8px 0;font-size:14px}
+  .muted{color:var(--muted);font-size:13px;line-height:1.6}
+  .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{padding:12px 14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,209,102,0.12),rgba(255,209,102,0.06));color:var(--text);text-decoration:none;border:1px solid rgba(255,209,102,0.18);font-weight:600}
+  .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04)}
+  .foot{padding:12px 16px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);display:flex;justify-content:space-between}
 </style>
 </head>
 <body>
-  <main class="card" aria-label="Rajneesh Singh profile">
-    <header class="head">
-      <figure class="avatar"><img src="Rajneesh.jpg" alt="Rajneesh Singh portrait" /></figure>
-      <div class="meta">
-        <div class="name">Rajneesh Singh</div>
-        <div class="role">CEO — Ghaziabad</div>
-      </div>
-      <div style="text-align:right;color:var(--muted)">
-        <div>rajneesh@aurr.co.in</div>
-        <div>9711887501</div>
-      </div>
-    </header>
-
-    <section class="body">
-      <div>
-        <div class="panel">
-          <h3>Leadership summary</h3>
-          <p class="muted">Experienced executive with a focus on strategic growth, team leadership, and operational excellence.</p>
+  <div class="wrap">
+    <article class="card" aria-label="Rajneesh Singh profile">
+      <header class="head">
+        <figure class="photo-wrap"><img class="photo" src="rajneesh.jpg" alt="Rajneesh Singh portrait" /></figure>
+        <div class="meta">
+          <h1 class="name">Rajneesh Singh</h1>
+          <div class="role">CEO • Ghaziabad</div>
         </div>
+        <div style="text-align:right;color:var(--muted)"><div>rajneesh@aurr.co.in</div><div>9711887501</div></div>
+      </header>
 
-        <div class="panel">
-          <h3>Interests</h3>
-          <p class="muted">Playing table tennis.</p>
-        </div>
-      </div>
+      <section class="body">
+        <div>
+          <div class="panel">
+            <h2 class="h">Leadership summary</h2>
+            <p class="muted">Experienced executive with a focus on strategic growth, team leadership, and operational excellence.</p>
+          </div>
 
-      <aside>
-        <div class="panel">
-          <h3>Contact</h3>
-          <div class="actions" role="group" aria-label="Contact actions">
-            <a class="action-btn" href="mailto:rajneesh@aurr.co.in" aria-label="Email Rajneesh">Email rajneesh@aurr.co.in</a>
-            <a class="action-btn secondary" href="tel:+919711887501" aria-label="Call Rajneesh">Call 9711887501</a>
+          <div style="height:10px"></div>
+
+          <div class="panel">
+            <h2 class="h">Interests</h2>
+            <p class="muted">Playing table tennis.</p>
           </div>
         </div>
-      </aside>
-    </section>
-  </main>
+
+        <aside>
+          <div class="panel">
+            <h3 class="h">Contact</h3>
+            <div class="actions" role="group">
+              <a class="btn" href="mailto:rajneesh@aurr.co.in">Email rajneesh@aurr.co.in</a>
+              <a class="btn secondary" href="tel:+919711887501">Call 9711887501</a>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="foot"><div class="muted">Profile</div><div class="muted">Updated</div></footer>
+    </article>
+  </div>
 </body>
 </html>
