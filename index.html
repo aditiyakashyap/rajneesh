@@ -3,54 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajneesh Singh - Professional Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Rajneesh Singh | Strategic Governance</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root { --bg-dark: #0f172a; --glass-bg: rgba(30, 41, 59, 0.7); --glass-border: rgba(255, 255, 255, 0.1); --accent: #d4af37; --accent-secondary: #3b82f6; --text-main: #f8fafc; --text-muted: #94a3b8; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-dark); background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.1) 0px, transparent 50%); color: var(--text-main); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
-        .profile-card { width: 100%; max-width: 450px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: 30px; padding: 40px 30px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); animation: slideUp 0.8s ease-out forwards; position: relative; overflow: hidden; }
-        .profile-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%); transform: rotate(45deg); pointer-events: none; }
-        .img-container { width: 140px; height: 140px; margin: 0 auto 25px; position: relative; }
-        .profile-pic { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); padding: 4px; background: var(--bg-dark); }
-        .name { font-size: 2rem; font-weight: 700; margin-bottom: 5px; background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .role { font-size: 1rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin-bottom: 20px; }
-        .details-grid { display: grid; gap: 15px; text-align: left; margin-bottom: 30px; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; }
-        .detail-item { display: flex; align-items: center; gap: 15px; font-size: 0.95rem; color: var(--text-muted); }
-        .detail-item i { width: 20px; color: var(--text-main); text-align: center; }
-        .education-badge { display: inline-block; background: rgba(212, 175, 55, 0.1); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 5px; border: 1px solid rgba(212, 175, 55, 0.2); }
-        .action-buttons { display: flex; gap: 15px; justify-content: center; }
-        .btn { flex: 1; padding: 15px; border-radius: 15px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .btn-primary { background: var(--text-main); color: var(--bg-dark); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,0.2); }
-        .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--text-main); }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
-</head>
-<body>
-    <div class="profile-card">
-        <div class="img-container">
-            <img src="./images/rajneesh.jpg" alt="Rajneesh Singh" class="profile-pic" onerror="this.src='https://ui-avatars.com/api/?name=Rajneesh+Singh&background=c0392b&color=fff&size=256'">
+    
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body class="executive-scroll">
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <div class="grid-overlay"></div>
+
+    <nav class="navbar">
+        <div class="logo">AURR<span class="dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="hover-link">Command</a></li>
+            <li><a href="#profile" class="hover-link">Governance</a></li>
+            <li><a href="#vision" class="hover-link">Vision</a></li>
+            <li><a href="#contact" class="hover-link">Connect</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <h1 class="name">Rajneesh Singh</h1>
-        <div class="role">CEO</div>
-        <div class="details-grid">
-            <div class="detail-item"><i class="fas fa-map-marker-alt"></i> <span>Ghaziabad</span></div>
-            <div class="detail-item"><i class="fas fa-briefcase"></i> <span>Strategic Initiatives & Governance</span></div>
-            <div class="detail-item" style="align-items: flex-start;">
-                <i class="fas fa-graduation-cap" style="margin-top: 5px;"></i>
-                <div>
-                    <span style="display:block; margin-bottom:4px;">Education</span>
-                    <span class="education-badge">Masters in Business Administration</span>
+    </nav>
+
+    <header id="hero" class="hero-section">
+        <div class="hero-content hidden-element">
+            <h2 class="subtitle">Aurr Pvt Ltd</h2>
+            <h1 class="glitch-text" data-text="RAJNEESH SINGH">RAJNEESH SINGH</h1>
+            <p class="description">Strategic Initiatives. Governance. Authority.</p>
+            
+            <div class="cta-group">
+                <a href="#contact" class="cta-btn">Initiate Contact</a>
+                <a href="https://www.instagram.com/aurr.2020?igsh=ZmJoZGo3eGEyc2Z3" target="_blank" class="insta-btn">
+                    <i class="fab fa-instagram"></i> Aurr Official
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Strategy</span>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <section id="profile" class="section profile-section">
+        <div class="container">
+            <div class="section-header hidden-element">
+                <h2 class="silver-text">The Strategist</h2>
+                <div class="separator"></div>
+            </div>
+            
+            <div class="profile-grid">
+                <div class="profile-text hidden-element">
+                    <h3>Strategic Initiatives & Governance</h3>
+                    <p>Leadership is not just about position; it is about the architecture of decisions. With a master's foundation in business administration, we drive **Aurr Pvt Ltd** with precision, foresight, and unyielding governance.</p>
+                    
+                    <div class="education-box">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Masters in Business Administration</h4>
+                            <span>Strategic Management & Operations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-image hidden-element">
+                    <div class="image-frame">
+                        <img src="rajneesh.jpg" alt="Rajneesh Singh" class="parallax-img">
+                        <div class="corner-border top-left"></div>
+                        <div class="corner-border bottom-right"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="action-buttons">
-            <a href="mailto:rajneesh@aurr.co.in" class="btn btn-secondary"><i class="far fa-envelope"></i> Email</a>
-            <a href="tel:9711887501" class="btn btn-primary"><i class="fas fa-phone"></i> Call</a>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-card hidden-element">
+                <h2>Headquarters: Ghaziabad</h2>
+                <p>Global vision, rooted execution.</p>
+                
+                <div class="contact-details">
+                    <a href="tel:+919711887501" class="silver-link">
+                        <i class="fas fa-phone-square-alt"></i> +91 97118 87501
+                    </a>
+                    
+                    <a href="mailto:rajneesh@aurr.co.in" class="silver-link">
+                        <i class="fas fa-envelope-open-text"></i> rajneesh@aurr.co.in
+                    </a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://www.instagram.com/aurr.2020?igsh=ZmJoZGo3eGEyc2Z3" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aurr Pvt Ltd. <span class="silver-text">Governance & Strategy.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
